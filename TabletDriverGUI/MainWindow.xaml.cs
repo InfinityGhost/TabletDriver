@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Ink;
@@ -171,6 +173,9 @@ namespace TabletDriverGUI
             Loaded += MainWindow_Loaded;
             SizeChanged += MainWindow_SizeChanged;
 
+            // Static events (must be removed on close)
+            SystemEvents.DisplaySettingsChanged += DisplaySettingsChanged;
+
         }
 
 
@@ -189,6 +194,9 @@ namespace TabletDriverGUI
             // Write configuration to XML file
             try { config.Write(configFilename); }
             catch (Exception) { }
+
+            // Remove static event to avoid memory leak
+            SystemEvents.DisplaySettingsChanged -= DisplaySettingsChanged;
 
             // Stop driver
             StopDriver();
@@ -512,6 +520,15 @@ namespace TabletDriverGUI
             return IntPtr.Zero;
         }
 
+        //
+        // Update on display settings change
+        //
+        private void DisplaySettingsChanged(object sender, EventArgs e)
+        {
+            // Fix canvases
+            CreateCanvasElements();
+            UpdateCanvasElements();
+        }
 
         #endregion
 
