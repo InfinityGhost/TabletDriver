@@ -175,7 +175,7 @@ namespace TabletDriverGUI
 
             // Static events (must be removed on close)
             SystemEvents.DisplaySettingsChanged += DisplaySettingsChanged;
-
+            SystemEvents.PowerModeChanged += PowerModeChanged;
         }
 
 
@@ -197,6 +197,7 @@ namespace TabletDriverGUI
 
             // Remove static event to avoid memory leak
             SystemEvents.DisplaySettingsChanged -= DisplaySettingsChanged;
+            SystemEvents.PowerModeChanged -= PowerModeChanged;
 
             // Stop driver
             StopDriver();
@@ -528,6 +529,16 @@ namespace TabletDriverGUI
             // Fix canvases
             CreateCanvasElements();
             UpdateCanvasElements();
+        }
+
+        private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
+        {
+            //Restart driver on system resume
+            if (e.Mode == PowerModes.Resume)
+            {
+                SetStatus("Restarting service because of system resume...");
+                driver.Restart();
+            }
         }
 
         #endregion
