@@ -537,7 +537,7 @@ namespace TabletDriverGUI
             if (e.Mode == PowerModes.Resume)
             {
                 SetStatus("Restarting service because of system resume...");
-                driver.Restart();
+                RestartDriverClick(sender, null);
             }
         }
 
