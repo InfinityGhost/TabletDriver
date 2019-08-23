@@ -175,7 +175,7 @@ namespace TabletDriverGUI
 
             // Static events (must be removed on close)
             SystemEvents.DisplaySettingsChanged += DisplaySettingsChanged;
-            SystemEvents.PowerModeChanged += PowerModeChanged;
+            SystemEvents.SessionSwitch += SessionSwitched;
         }
 
 
@@ -197,7 +197,7 @@ namespace TabletDriverGUI
 
             // Remove static event to avoid memory leak
             SystemEvents.DisplaySettingsChanged -= DisplaySettingsChanged;
-            SystemEvents.PowerModeChanged -= PowerModeChanged;
+            SystemEvents.SessionSwitch -= SessionSwitched;
 
             // Stop driver
             StopDriver();
@@ -531,14 +531,13 @@ namespace TabletDriverGUI
             UpdateCanvasElements();
         }
 
-        private void PowerModeChanged(object sender, PowerModeChangedEventArgs e)
+        //
+        // Update on session switched
+        //
+        private void SessionSwitched(object sender, SessionSwitchEventArgs e)
         {
-            //Restart driver on system resume
-            if (e.Mode == PowerModes.Resume)
-            {
-                SetStatus("Restarting service because of system resume...");
-                RestartDriverClick(sender, null);
-            }
+            // Force driver restart on session change / wakeup event
+            RestartDriverClick(sender, null);
         }
 
         #endregion
