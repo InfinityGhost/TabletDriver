@@ -12,7 +12,7 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
 
 ## Download
 
-### http://hwk.fi/TabletDriver/TabletDriverV0.2.3.zip
+### https://github.com/InfinityGhost/TabletDriver/releases/download/v0.3.0-pre/TabletDriver.0.3.0pre.zip
 
 #
 
@@ -52,6 +52,7 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
   - XP-Pen G640S
   - XP-Pen Deco 01
   - XP-Pen Deco 01 v2
+  - XP-Pen Deco 02
   - Huion 420
   - Huion H420
   - Huion H430P
@@ -76,10 +77,9 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
     * https://aka.ms/vs/15/release/vc_redist.x86.exe
 
 2. Unzip the driver to a folder (Shorter path is recommended, for example `C:\Temp\TabletDriver`)
-3. Uninstall all other tablet drivers. If you have problems with uninstalling the Wacom drivers, check the GitHub issue [#1](https://github.com/hawku/TabletDriver/issues/1)
-4. Run `install_vmulti_driver.bat`. It might need a restart if there is another vmulti driver installed.
-5. If you have Huion or Gaomon tablet, you need to run `install_huion_64.bat`, which is in the `driver_huion` directory.
-6. Start the TabletDriverGUI.exe
+3. Start the TabletDriverGUI.exe
+4. Open the VMulti dropdown menu -> VMulti Installer
+5. Install the VMulti driver from the GUI.
 
 ## Updating to a new version
 
@@ -89,8 +89,8 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
 ## Uninstallation
 
 1. Uncheck the "Run at Windows startup" option in the GUI.
-2. Run `remove_vmulti_driver.bat`
-3. Run `remove_huion_64.bat`, which is in the `driver_huion` directory.
+2. Uninstall the VMulti driver through `TabletDriver\bin\VMulti Installer GUI.exe` or in the main window.
+3. Delete the application files.
 
 #
 
@@ -106,8 +106,12 @@ If you want to compile the code and don't want to install anything from the Tabl
 
 # Changelog
 
->**v0.2.4:**
-> - Gaomon S620 configuration by [frodriguez96](https://github.com/frodriguez96).
-> - Huion H610 configuration by [InfinityGhost](https://github.com/InfinityGhost).
+>**v0.3.0**
+>- VMulti installer now has a GUI
+>  - Open from main window or at `\bin\VMulti Installer GUI.exe`
+>  - One click install & uninstall
+>  - Can detect if it is already installed
+>- XP-Pen Deco 02 Support ([mat32323](https://github.com/mat32323))
+>- Display area editor will adjust to display changes
 
 [**View all changelogs**](docs/changelog.md)
