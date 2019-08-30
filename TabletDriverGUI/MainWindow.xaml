@@ -158,6 +158,9 @@
                     ToolTip="Fits the GUI window to content of active tab."
                     />
         </MenuItem>
+        <MenuItem Header="VMulti">
+          <MenuItem Header="Open installer" Click="VMultiInstallerOpen_Click"/>
+        </MenuItem>
       </Menu>
       <TextBox AcceptsReturn="True" />
     </DockPanel>

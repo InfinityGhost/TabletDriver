@@ -1,0 +1,64 @@
+﻿<Window x:Class="VMulti_Installer_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VMulti_Installer_GUI"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="VMulti Driver Installer"
+        Width="498" Height="360">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="21"/>
+            <Setter Property="MinWidth" Value="73"/>
+            <Setter Property="Margin" Value="2,3"/>
+            <Setter Property="Padding" Value="5,0"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="18" Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition MinHeight="46" Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="164"/>-->
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label
+            HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0"
+            FontSize="16" FontFamily="Segoe UI Semilight">
+            VMulti Driver Installer
+        </Label>
+        
+        <GroupBox Header="Console" Grid.Row="1">
+            <TextBox x:Name="OutputTextbox" IsReadOnly="True" FontFamily="Lucida Console"
+                     ScrollViewer.CanContentScroll="True" 
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <TextBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Copy all" Click="CopyAllConsole"/>
+                        <MenuItem Header="Clear all" Click="ClearAllConsole"/>
+                    </ContextMenu>
+                </TextBox.ContextMenu>
+            </TextBox>
+        </GroupBox>
+
+        <StackPanel
+            Name="ButtonPanel"
+            Grid.Row="3" Grid.ColumnSpan="2"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Button Content="Install" Click="InstallVMulti"/>
+            <Button Content="Uninstall" Click="UninstallVMulti"/>
+            <Button Content="Check if installed" Click="CheckVMulti"/>
+        </StackPanel>
+        
+        
+        
+    </Grid>
+</Window>
