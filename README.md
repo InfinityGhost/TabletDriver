@@ -93,6 +93,10 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
 
 #
 
+## Build Requirements
+**7za (for solution build)**
+- https://www.7-zip.org/download.html
+
 ## VMulti and Huion driver binaries
 
 If you want to compile the code and don't want to install anything from the TabletDriver binary package, you will need extract the missing drivers from these installation packages:
