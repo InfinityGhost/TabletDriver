@@ -5,7 +5,8 @@
 >  - Open from main window or at `\bin\VMulti Installer GUI.exe`
 >  - One click install & uninstall
 >  - Can detect if it is already installed
->- XP-Pen Deco 02 Support ([mat32323](https://github.com/mat32323))
+>- XP-Pen Deco 02 configuration ([mat32323](https://github.com/mat32323))
+>- Huion HS64 configuration ([InfinityGhost](https://github.com/InfinityGhost))
 >- Display area editor will adjust to display changes
 
 >**v0.2.4:**

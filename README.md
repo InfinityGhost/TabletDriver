@@ -73,9 +73,8 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
 ## Installation
 
 1. You might need to install these libraries, but usually these are already installed:
-    * https://www.microsoft.com/net/download/dotnet-framework-runtime
-    * https://aka.ms/vs/15/release/vc_redist.x86.exe
-
+   * https://www.microsoft.com/net/download/dotnet-framework-runtime
+   * https://aka.ms/vs/15/release/vc_redist.x86.exe
 2. Unzip the driver to a folder (Shorter path is recommended, for example `C:\Temp\TabletDriver`)
 3. Start the TabletDriverGUI.exe
 4. Open the VMulti dropdown menu -> VMulti Installer
@@ -83,7 +82,7 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
 
 ## Updating to a new version
 
-1. Unzip the new version
+1. Unzip the new version.
 2. Start the TabletDriverGUI.exe
 
 ## Uninstallation
@@ -111,7 +110,8 @@ If you want to compile the code and don't want to install anything from the Tabl
 >  - Open from main window or at `\bin\VMulti Installer GUI.exe`
 >  - One click install & uninstall
 >  - Can detect if it is already installed
->- XP-Pen Deco 02 Support ([mat32323](https://github.com/mat32323))
 >- Display area editor will adjust to display changes
+>- XP-Pen Deco 02 configuration ([mat32323](https://github.com/mat32323))
+>- Huion HS64 configuration ([InfinityGhost](https://github.com/InfinityGhost))
 
 [**View all changelogs**](docs/changelog.md)
