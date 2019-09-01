@@ -94,12 +94,11 @@ The GUI minimizes to system tray / notification area. You can reopen the GUI by 
 #
 
 ## Build Requirements
-**7za (for solution build)**
-- https://www.7-zip.org/download.html
-
-## VMulti and Huion driver binaries
 
 If you want to compile the code and don't want to install anything from the TabletDriver binary package, you will need extract the missing drivers from these installation packages:
+
+**7-zip x64:**
+- https://www.7-zip.org/download.html
 
 **VMulti driver:**
 - https://www.xp-pen.com/upload/download/20181019/osuWin(20181019).zip
