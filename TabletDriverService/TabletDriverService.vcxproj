@@ -112,7 +112,9 @@ xcopy /C /Y "$(ProjectDir)config\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configu
 
 xcopy /C /Y "$(ProjectDir)tools\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\tools\*"
 
-xcopy /C /Y "$(SolutionDir)VMulti Installer GUI\bin\$(Configuration)\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\bin\*"</Command>
+xcopy /C /Y "$(SolutionDir)VMulti Installer GUI\bin\$(Configuration)\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\bin\*"
+
+"$(ProgramW6432)\7-Zip\7z.exe" a -tzip "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\build.zip" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\*"</Command>
       <Message>Copy files</Message>
       <Outputs>copyfiles.txt</Outputs>
     </CustomBuildStep>
@@ -157,7 +159,9 @@ xcopy /C /Y "$(ProjectDir)config\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configu
 
 xcopy /C /Y "$(ProjectDir)tools\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\tools\*"
 
-xcopy /C /Y "$(SolutionDir)VMulti Installer GUI\bin\$(Configuration)\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\bin\*"</Command>
+xcopy /C /Y "$(SolutionDir)VMulti Installer GUI\bin\$(Configuration)\*" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\bin\*"
+
+"$(ProgramW6432)\7-Zip\7z.exe" a -tzip "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\build.zip" "$(SolutionDir)TabletDriverGUI\bin\$(Configuration)\*"</Command>
       <Message>Copy files</Message>
       <Outputs>copyfiles.txt</Outputs>
     </CustomBuildStep>
