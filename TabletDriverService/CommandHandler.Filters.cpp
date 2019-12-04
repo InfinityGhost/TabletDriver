@@ -330,6 +330,30 @@ void CommandHandler::CreateFilterCommands() {
 	}));
 
 
+	// Command: ButtonFix, ButtonFix
+	//
+	// Sets ButtonFix filter parameters
+	//
+	AddAlias("ButtonFix", "ButtonFixAdd");
+	AddCommand(new Command("ButtonFixAdd", [&](CommandLine* cmd) {
+
+		// Tablet valid?
+		if (!ExecuteCommand("TabletValid")) return false;
+
+		std::string stringValue = cmd->GetStringLower(0, "");
+
+		// Off / False
+		if (stringValue == "off" || stringValue == "false") {
+			tablet->buttonFix.isEnabled = false;
+			LOG_INFO("Button Fix = off\n");
+		}
+		else {
+			tablet->buttonFix.isEnabled = true;
+			LOG_INFO("Button Fix = on\n");
+		}
+		return true;
+	}));
+
 
 	//
 	// Command: FilterTimerInterval, TimerInterval, Interval

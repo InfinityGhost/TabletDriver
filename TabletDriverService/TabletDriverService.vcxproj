@@ -190,6 +190,7 @@
     <ClInclude Include="Tablet.h" />
     <ClInclude Include="TabletFilterAdvancedSmoothing.h" />
     <ClInclude Include="TabletFilterAntiSmoothing.h" />
+	<ClInclude Include="TabletFilterButtonFix.h" />
     <ClInclude Include="TabletFilterGravity.h" />
     <ClInclude Include="TabletFilterTester.h" />
     <ClInclude Include="TabletHandler.h" />
@@ -239,6 +240,7 @@
     <ClCompile Include="Tablet.cpp" />
     <ClCompile Include="TabletFilterAdvancedSmoothing.cpp" />
     <ClCompile Include="TabletFilterAntiSmoothing.cpp" />
+	<ClCompile Include="TabletFilterButtonFix.cpp" />
     <ClCompile Include="TabletFilterGravity.cpp" />
     <ClCompile Include="TabletFilterTester.cpp" />
     <ClCompile Include="TabletHandler.cpp" />
