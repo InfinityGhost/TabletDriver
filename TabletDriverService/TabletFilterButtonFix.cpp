@@ -39,7 +39,9 @@ void TabletFilterButtonFix::Update() {
 	// Invalid position data detection.
 	// Some tablets do send invalid/broken data when buttons are released
 	//
-	if (tabletState.buttons <= 1 && oldTabletState.buttons > 1) {
+
+	if (tabletState.buttons <= 1 && oldTabletState.buttons > 1 && ignoreInvalidReports == 0) {
+		//LOG_INFO("RELEASE\n");
 		tabletState.pressure = oldTabletState.pressure;
 		tabletState.inputPressure = oldTabletState.inputPressure;
 		if (oldTabletState.buttons == 5 || oldTabletState.buttons == 3)
@@ -49,7 +51,11 @@ void TabletFilterButtonFix::Update() {
 		memcpy(&this->oldTabletState, &this->tabletState, sizeof(TabletState));
 		return;
 	}
-
+	else if (oldTabletState.buttons <= 1 && tabletState.buttons > 1 && ignoreInvalidReports == 0) {
+		//LOG_INFO("PRESS\n");
+		oldTabletState.buttons = tabletState.buttons;
+		ignoreInvalidReports = 2;
+	}
 	if (ignoreInvalidReports == 0) {
 		// Update old values
 		oldTarget.Set(latestTarget);
