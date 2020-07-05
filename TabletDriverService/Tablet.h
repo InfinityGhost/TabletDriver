@@ -17,6 +17,7 @@
 #include "TabletFilterNoiseReduction.h"
 #include "TabletFilterAntiSmoothing.h"
 #include "TabletFilterPeak.h"
+#include "TabletFilterButtonFix.h"
 #include "TabletMeasurement.h"
 #include "DataFormatter.h"
 
@@ -164,6 +165,7 @@ public:
 	TabletFilterNoiseReduction noiseFilter;
 	TabletFilterAntiSmoothing antiSmoothing;
 	TabletFilterGravity gravityFilter;
+	TabletFilterButtonFix buttonFix;
 
 	// Timed filters
 	TabletFilter *filterTimed[10];

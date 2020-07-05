@@ -59,9 +59,10 @@ Tablet::Tablet() {
 	filterTimedCount = 3;
 
 	// Report filters
-	filterReport[0] = &antiSmoothing;
-	filterReport[1] = &noiseFilter;
-	filterReportCount = 2;
+	filterReport[0] = &buttonFix;
+	filterReport[1] = &antiSmoothing;
+	filterReport[2] = &noiseFilter;
+	filterReportCount = 3;
 
 	// Tablet connection open
 	isOpen = false;
